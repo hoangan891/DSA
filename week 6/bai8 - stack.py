@@ -2,8 +2,7 @@ def evaluate_postfix(expr):
     stack = []
     for token in expr.split():
         if token in "+-*/":
-            b = stack.pop()
-            a = stack.pop()
+            b, a = stack.pop(), stack.pop()
             if token == "+": stack.append(a + b)
             elif token == "-": stack.append(a - b)
             elif token == "*": stack.append(a * b)

@@ -4,8 +4,7 @@ def infix_to_postfix(expr):
     for char in expr:
         if char.isalnum(): postfix.append(char)
         elif char in prec:
-            while stack and stack[-1] in prec and prec[stack[-1]] >= prec[char]:
-                postfix.append(stack.pop())
+            while stack and stack[-1] in prec and prec[stack[-1]] >= prec[char]: postfix.append(stack.pop())
             stack.append(char)
     while stack: postfix.append(stack.pop())
     return "".join(postfix)

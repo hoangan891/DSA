@@ -10,6 +10,5 @@ class BoundedStack:
         return self.stack.pop()
 s = BoundedStack(2)
 s.push(1)
-s.push(2)
 try: s.push(3)
 except Exception as e: print(e)

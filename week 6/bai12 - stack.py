@@ -1,9 +1,7 @@
 def largest_rectangle_area(heights):
     stack, max_area, index = [], 0, 0
     while index < len(heights):
-        if not stack or heights[stack[-1]] <= heights[index]:
-            stack.append(index)
-            index += 1
+        if not stack or heights[stack[-1]] <= heights[index]: stack.append(index); index += 1
         else:
             top = stack.pop()
             area = (heights[top] * ((index - stack[-1] - 1) if stack else index))
